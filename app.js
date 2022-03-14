@@ -28,16 +28,20 @@ function displayData(data) {
 
     return (
       `<div class='advert'>
-      <a href='${ad.url}'>     
-       <img src='${ad.thumbnail[0].url}' alt=''/>
-      </a>
-      <p class='category'>${ad.categories}</p>
-      <a href='${ad.url}'> 
-       <p class='description'>${ad.name}</p>
-      </a>
-      <a href='${ad.url}' target='_blank' class='branding'>
-        <p>${ad.branding}</p>
-      </a>
+        <a href='${ad.url}'> 
+          <img src='${ad.thumbnail[0].url}' alt=${ad.branding}/>      
+        </a>
+        <div class='ad-info'>
+         <p class='category'>${ad.categories ? ad.categories : 'category'}</p>
+         <a href='${ad.url}'> 
+            <p class='description'>${ad.name ? ad.name : ''}</p>
+         </a>
+         <a href='${ad.url}' target='_blank' class='branding'>
+          <div class='branding'>
+             <p>${ad.branding}</p>
+          </div>
+         </a>
+        </div> 
       </div>`
     )
   })
